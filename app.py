@@ -1,8 +1,7 @@
 from flask import Flask, render_template, url_for, request
 from github import Github
-import os
 
-g = Github("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")
+g = Github("TOKEN")
 app = Flask(__name__)
 
 @app.route('/')
@@ -95,5 +94,4 @@ def click_projeto():
   return render_template('html/projetos.html', projetos=arquivos, readme=readme)
 
 if __name__ == '__main__':
-  port = int(os.environ.get('PORT', 5000))
   app.run(port=port)
