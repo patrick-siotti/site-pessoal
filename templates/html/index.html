@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/default.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_index.css') }}"> 
+</head>
+<body>
+
+  <header>
+    <div>
+      <a href="/"><button>home</button></a>
+      <a href="/sobremim"><button>sobre mim</button></a>
+      <a href="/projetos"><button>projetos</button></a>
+      <a href="https://github.com/patrick-siotti" target="_blank" id="github"><img title="Github" src="{{ url_for('static', filename='images/59841892.jpg') }}" alt="github"></a>
+    </div> 
+  </header>
+
+  <h1>BEM VINDO</h1>
+  <hr>
+  <p>Patrick Gianluppi Siotti</p>
+
+</body>
+</html>

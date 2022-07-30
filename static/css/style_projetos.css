@@ -1,0 +1,120 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body > div > h1 {
+  color: var(--color-text);
+  text-align: center;
+  margin-top: 5%;
+}
+
+#projetos {
+  margin-top: 30px;
+  max-width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#projetos > form > button {
+  width: 700px;
+  height: 70px;
+  font-size: 1.5em;
+  font-family: monospace;
+  background-color: var(--color-border);
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  border-bottom: 3px solid var(--color-background);
+}
+
+#projetos > form > button:hover {
+  transition-duration: 0.5s;
+  background-color: var(--color-move);
+}
+
+#projetos > form > button:not(:hover) {
+  transition-duration: 0.5s;
+}
+
+#projetos > form > button[name="#"] {
+  cursor: not-allowed;
+  background-color: #1e1635;
+}
+
+#readme > * {
+  color: black;
+  background-color: None;
+}
+
+#readme {
+  background-color: var(--color-text-background);
+  width: 90%;
+  height: 100%;
+  margin: 50px auto 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  color: black;
+}
+
+#readme > img {
+  max-width: 100%;
+}
+
+#readme > p > img {
+  max-width: 300px;
+}
+
+#readme > h1 {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+#readme > code, pre, #readme > p > code {
+  background-color: rgba(0, 0, 0, 0.192);
+  padding: 3px 5px;
+  border-radius: 5px;
+  white-space: wrap;
+  overflow: auto;
+}
+
+pre::-webkit-scrollbar {
+	width: 10px;
+  height: 10px;
+}
+pre::-webkit-scrollbar-thumb:horizontal {
+	background-color: #383838;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 750px) {
+  #projetos > form > button {
+    width: 300px;
+  }
+  #projetos {
+    max-width: 100%;
+  }
+  #readme {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #readme {
+    max-width: 90%;
+    white-space: wrap;
+    overflow: auto;
+    margin-bottom: 0px;
+  }
+}

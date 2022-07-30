@@ -1,0 +1,124 @@
+h1 {
+  color: var(--color-background);
+  text-align: center;
+  font-size: 1em;
+  letter-spacing: 2.5em;
+  font-weight: bold;
+  font-family: monospace;
+  animation: forwards;
+  animation-delay: 1s;
+  animation-duration: 6s;
+  animation-name: transition;
+}
+
+p {
+  color: var(--color-background);
+  text-align: center;
+  font-family: serif;
+  margin-top: 2%;
+  animation: forwards;
+  animation-delay: 5s;
+  animation-duration: 2s;
+  animation-name: transition_color;
+}
+
+hr {
+  width: 0px;
+  border: 0px;
+  color: var(--color-background);
+  animation: forwards;
+  animation-delay: 2s;
+  animation-duration: 5s;
+  animation-name: transition_hr;
+}
+
+@media screen and (max-width: 599px) {
+  h1 {
+    margin-top: 150px;
+    font-size: 1.5em;
+    letter-spacing: 0.6em;
+    color: var(--color-text);
+  }
+  p {
+    font-size: 1.5em;
+    color: var(--color-text);
+  }
+  hr {
+    width: 60%;
+    border: 1px solid var(--color-text);
+  }
+}
+
+@media screen and (min-width: 600px) {
+
+  p {
+    font-size: 2em;
+  }
+  
+  @keyframes transition_color {
+    100% {
+      color: var(--color-text);
+    }
+  }
+
+  @keyframes transition {
+    100% {
+      font-size: 3em;
+      margin-top: 150px;
+      margin-bottom: 0px;
+      letter-spacing: 0.3em;
+      color: var(--color-text);
+    }
+  }
+
+  @keyframes transition_hr {
+    0% {
+      width: 0%;
+    }
+    10% {
+      border: 1px solid var(--color-text);
+    }
+    100% {
+      border: 1px solid var(--color-text);
+      color: var(--color-text);
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+
+  p {
+    font-size: 3em;
+  }
+
+  @keyframes transition_color {
+    100% {
+      color: var(--color-text);
+    }
+  }
+
+  @keyframes transition {
+    100% {
+      font-size: 5em;
+      margin-top: 100px;
+      margin-bottom: 0px;
+      letter-spacing: 0.3em;
+      color: var(--color-text);
+    }
+  }
+
+  @keyframes transition_hr {
+    0% {
+      width: 0%;
+    }
+    10% {
+      border: 1px solid var(--color-text);
+    }
+    100% {
+      border: 1px solid var(--color-text);
+      color: var(--color-text);
+      width: 50%;
+    }
+  }
+}

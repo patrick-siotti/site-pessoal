@@ -1,0 +1,24 @@
+:root {
+  --color-background: #100c1b;
+  --color-text: #ffffff;
+  --color-border: #2a1958;
+  --color-move: #442f7e;
+  --color-text-background: rgb(178, 188, 207);
+}
+
+body {
+  background-color: var(--color-background);
+  margin: 0px;
+}
+
+html::-webkit-scrollbar {
+	width: 15px;
+}
+
+html::-webkit-scrollbar-track-piece  {
+	background-color: var(--color-background);
+}
+
+html::-webkit-scrollbar-thumb:vertical {
+	background-color: #862daf;
+}

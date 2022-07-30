@@ -1,0 +1,69 @@
+header {
+  background-color: var(--color-border);
+  height: 100px;
+  display: block;
+}
+
+header > div {
+  display: flex;
+}
+
+header > div > a#github{
+  position: absolute;
+  right: 0%;
+}
+
+header > div > a > button{
+  cursor: pointer;
+  background-color: var(--color-border);
+  color: var(--color-text);
+  text-decoration: none;
+  margin: 0px;
+  border: 0px solid transparent;
+  font-size: 1.1em;
+  width: 150px;
+  height: 100px;
+  padding: 0px;
+}
+
+header > div > a > button:hover{
+  transition-duration: 0.5s;
+  background-color: var(--color-background);
+}
+
+header > div > a > button:not(:hover){
+  transition-duration: 0.5s;
+  background-color: var(--color-border);
+}
+
+header > div > a > button:active{
+  transition-duration: 0s;
+  background-color: var(--color-border);
+}
+
+header > div > a > img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+/* pegar resolução da tela */
+@media screen and (max-width: 600px) {
+  header > div > a > img {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+  }
+
+  header > div > a > button {
+    font-size: 0.9em;
+    text-decoration: none;
+    width: 100px;
+    height: 100px;
+  }
+
+  /* header > div > a#github {
+    bottom: 0%;
+  } */
+}
