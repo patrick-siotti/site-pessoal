@@ -1,16 +1,30 @@
 from flask import Flask, render_template, url_for, request
 from github import Github
 
-g = Github("TOKEN")
+TOKEN = "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" # token do github
+NOME = 'Patrick Gianluppi Siotti' # nome completo
+TEXTO = '''<p>Olá! Me chamo Patrick, sou calmo, adoro aprender e gosto de ser eficiente, trabalho com free lancer a 1 ano como programador python, tendo ganhado bastante experiencia graças a isso.</p>
+<p>Em python: Tenho conhecimento de todo o basico (bibliotecas, dicionarios, listas, if elif else, repetições, etc), tendo conhecimento de objetos e algumas bibliotecas: flask, github, selenium, telegram, discord, etc. E muitas bibliotecas já incluidas no python como: os, time, random, etc.</p>
+<p>Em web: Em criação web, esotou mais familiarizado com o front end, gosto muito de brincar com css. Em html5 tenho conhecimento de todo o basico e a logica por tras, no css3 tenho conhecimento basico sobre tudo, mas se precisso fazer algo a mais, não fico intimidado, e vou atras fazer.</p>
+<p>Estou estudando atualmente engenharia de dados, gosto muito dessa área e quero aproveitar o maximo dela.</p>
+<p>esse site foi feito usando html, css e python</p>''' # texto de apresentação
+
+IGNORAR = ['zip', 'ttf', 'otf', 'db', 'psd'] # arquivos que não serão abertos
+IMAGEM = ['jpeg', 'jpg', 'gif', 'png', 'bmp', 'tiff', 'pdf', 'svg', 'raw', 'webp', 'ico', 'icon', 'psd'] # arquivos de imagem
+AUDIO = ['mp3', 'wma', 'ogg', 'aac', 'wav', 'aiff', 'pcm', 'flac'] # arquivos de audio
+VIDEO = ['mp4', 'avi', 'm4v', 'mov', 'mpg', 'mpeg', 'wmv'] # arquivos de video
+# se caso for um arquivo e a extenção dele não estiver aqui, ele sera aberto como um arquivo de texto
+
+g = Github(TOKEN)
 app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-  return render_template('html/index.html')
+  return render_template('html/index.html', nome=NOME)
 
 @app.route('/sobremim')
 def sobremim():
-  return render_template('html/sobremim.html')
+  return render_template('html/sobremim.html', texto=TEXTO)
 
 @app.route('/projetos', methods=['GET'])
 def projetos():
@@ -19,7 +33,7 @@ def projetos():
 
   for repo in g.get_user().get_repos():
 
-    if str(repo.name) == 'patrick-siotti':
+    if str(repo.name) == g.get_user().name.replace(' ', '-'):
       readme = repo.get_readme().decoded_content.decode('utf-8')
     else:
       projetos.append(
@@ -70,23 +84,23 @@ def click_projeto():
       if '.md' in content.path: # readme
         readme = content.decoded_content.decode('utf-8')
 
-      elif str(content.name).split('.')[-1] in ['zip', 'ttf', 'otf', 'db', 'psd']: # ignorar
+      elif str(content.name).split('.')[-1] in IGNORAR: # ignorar
         arquivos.append({'nome':content.name, 'caminho': '#'})
 
-      elif str(content.name).split('.')[-1] in ['jpeg', 'jpg', 'gif', 'png', 'bmp', 'tiff', 'pdf', 'svg', 'raw', 'webp', 'ico', 'icon', 'psd']: # imagem
+      elif str(content.name).split('.')[-1] in IMAGEM: # imagem
         arquivos.append({'nome':content.name, 'caminho': f'<img src="{content.download_url}">'})
 
-      elif str(content.name).split('.')[-1] in ['mp3', 'wma', 'ogg', 'aac', 'wav', 'aiff', 'pcm', 'flac']: # audio
+      elif str(content.name).split('.')[-1] in AUDIO: # audio
         arquivos.append({'nome':content.name, 'caminho': f'<audio controls>\n<source src="{content.download_url}">\naudio não suportado\n</audio>'})
 
-      elif str(content.name).split('.')[-1] in ['mp4', 'avi', 'm4v', 'mov', 'mpg', 'mpeg', 'wmv']: # video
+      elif str(content.name).split('.')[-1] in VIDEO: # video
         arquivos.append({'nome':content.name, 'caminho': f'<video controls>\n<source src="{content.download_url}">\nvideo não suportado\n</video>'})
         
       else:
         arquivos.append({'nome':content.name, 'caminho': f'<pre>\n{content.decoded_content.decode("utf-8")}\n</pre>'})
 
     elif content.type == 'dir':
-      if str(content.name) == 'patrick-siotti': # readme principaç
+      if str(content.name) == g.get_user().name.replace(' ', '-'): # readme principaç
         readme = content.get_readme().decoded_content.decode('utf-8')
       else: # pastas
         arquivos.append({'nome':content.name, 'caminho':f'{principal}/{caminho}/{content.name}'})
@@ -94,4 +108,4 @@ def click_projeto():
   return render_template('html/projetos.html', projetos=arquivos, readme=readme)
 
 if __name__ == '__main__':
-  app.run(port=port)
+  app.run()

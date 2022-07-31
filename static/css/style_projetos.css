@@ -48,7 +48,7 @@ body > div > h1 {
   transition-duration: 0.5s;
 }
 
-#projetos > form > button[name="#"] {
+#projetos > form > button[disabled="true"] {
   cursor: not-allowed;
   background-color: #1e1635;
 }
