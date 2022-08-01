@@ -68,12 +68,8 @@ body > div > h1 {
   color: black;
 }
 
-#readme > img {
+img {
   max-width: 100%;
-}
-
-#readme > p > img {
-  max-width: 300px;
 }
 
 #readme > h1 {
