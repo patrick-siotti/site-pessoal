@@ -34,8 +34,17 @@
 
 <div>
   <p>agora é só colocar tudo isso no codigo:</p>
-  <p>aqui você já pode colocar o token do seu github, seu nome completo e um texto de apresentação sobre você</p>
-  <img src="https://user-images.githubusercontent.com/59841892/182046312-00a42c82-62b3-4e65-9252-ff0563066164.png">
+  <p>tem um arquivo no codigo chamado "config.py" lá dentro você já vai encontrar as variaveis para adicionar o token do github, seu nome completo e um texto de apresentação</p>
+</div>
+
+<h1></h1>
+
+<div>
+  <p>tem muitos arquivos que o site não consegue abrir ou que deve ser aberto como video, imagem ou audio</p>
+  <p>muitos arquivos o codigo já conhece, mas se caso tiver algum desconhecido é só adicionar as listas no mesmo arquivo em que você colocou os dados: "config.py"</p>
+  <p>ná variavel ignorar, são os arquivos que não poderão ser abertos, na variavel audio, são os arquivos de audio, no de imagem os de imagem etc</p>
+  <p>se caso o codigo detectar que é um arquivo e não achar nenhuma extenção nas variaveis, ele irá abrir como um arquivo de texto</p>
+  <p>os arquivos readme.md são abertos automaticamente e não precissam ser configurados</p>
 </div>
 
 <h1></h1>
@@ -43,17 +52,6 @@
 <div>
   <p>para a foto, é só ir na pasta static/img/ e lá colocar a sua foto com o nome de git_pic.png</p>
   <img src="https://user-images.githubusercontent.com/59841892/182046399-b5550a0d-4b3f-4db6-9375-f7ff299287c5.png">
-</div>
-
-<h1></h1>
-
-<div>
-  <p>tem muitos arquivos que o site não consegue abrir ou que deve ser aberto como video, imagem ou audio</p>
-  <p>muitos arquivos o codigo já conhece, mas se caso tiver algum desconhecido é só adicionar as listas</p>
-  <p>ná variavel ignorar, são os arquivos que não poderão ser abertos, na variavel audio, são os arquivos de audio, no de imagem os de imagem etc</p>
-  <p>se caso o codigo detectar que é um arquivo e não achar nenhuma extenção nas variaveis, ele irá abrir como um arquivo de texto</p>
-  <p>os arquivos readme.md são abertos automaticamente e não precissam ser configurados</p>
-  <img src="https://user-images.githubusercontent.com/59841892/182046467-46419834-d93f-47ff-8090-66f056e49198.png">
 </div>
 
 <h1>sobre o projeto</h1>
