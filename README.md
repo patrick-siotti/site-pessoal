@@ -1,6 +1,11 @@
 <h1 align="center">Site Pessoal</h1>
 
 <div>
+  <p>Site desenvolvido no intuito de facilitar o desenvolvimento de sites pessoais para programadores ou desenvolvedores iniciantes.</p>
+  <p>Desenvolvido usando Flask, pode ser configurado facilmente simplismente mudando algumas linhas no arquivo de configurações.</p>
+</div>
+
+<div>
   <img src="https://user-images.githubusercontent.com/59841892/182045690-f49d6896-8172-4d1c-b0aa-f847aa569f04.png">
   <p>o site incia na página "home", com animação no "bem vindo", onde o texto pode ser modificado no código</p>
   <p>a navegação em cima leva para uma pagina "sobre mim" e dos "projetos" onde mostra os projetos do github</p>
@@ -19,7 +24,7 @@
 <div>
   <img src="https://user-images.githubusercontent.com/59841892/182045954-3bc09cd2-ae73-4f48-b34e-36d77cd1ca13.png">
   <p>na página "projetos" o código busca direto do github os projetos, colocando as pastas e arquivos como botões e clicando nos arquivos para abrir-los</p>
-  <p>nos arquivos readme.md, foi copiado o css to github, apenas tendo que escrever-los em html</p>
+  <p>nos arquivos readme.md foi copiado o css do github, apenas tendo que escrever-los em html</p>
 </div>
 
 <h1>quero usar-lo, como fazer?</h1>
